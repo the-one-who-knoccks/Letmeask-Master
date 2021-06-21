@@ -47,7 +47,7 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 
 O Letmeask é uma plataforma de compartilhamento de conhecimentos sobre
-tecnologia. Podendo serem feitas perguntas e respostas.
+tecnologia através de perguntas e respostas.
 
 
 
