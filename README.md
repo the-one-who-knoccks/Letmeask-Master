@@ -23,7 +23,7 @@
 <br />
 
 <h1 align="center">
-    <img src="public/assets/logo.svg"  >
+    <img src="src/assets/logo.svg"  >
 </h1>
 
 
