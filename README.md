@@ -26,10 +26,11 @@
     <img src="src/assets/logo.svg"  >
 </h1>
 
-
+## Tela da aplicação até o momento.
+<br/>
 
 <h1 align="center">
-    <img src="https://ik.imagekit.io/hld13bjzb1/Letmeask__Copy__Wy5ZZPPIF6.png" >
+    <img src="https://ik.imagekit.io/hld13bjzb1/Peek_2021-06-22_17-41_lxUHLemnM.gif" >
 </h1>
 
 
