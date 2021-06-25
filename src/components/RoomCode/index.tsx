@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/button-has-type */
-import '../../styles/room-code.scss';
+import './styles.scss';
 
 import copyImg from '../../assets/copy.svg';
 
