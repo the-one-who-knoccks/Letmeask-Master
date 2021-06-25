@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-useless-return */
 /* eslint-disable react/button-has-type */
 import { FormEvent, useState } from 'react';
@@ -5,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import illustrationImg from '../../assets/illustration.svg';
 import logoImg from '../../assets/logo.svg';
 import googleIconImg from '../../assets/google-icon.svg';
-import '../../styles/auth.scss';
+import './styles.scss';
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { database } from '../../services/firebase';
