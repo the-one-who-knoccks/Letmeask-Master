@@ -72,7 +72,7 @@ export function AdminRoom() {
                   type="button"
                   onClick={() => handleDeleteQuestion(question.id)}
                 >
-                  <img src={deleteImg} alt="Remover pergunta" />
+                  <img src={deleteImg} alt="Remover pergunta?" />
                 </button>
               </Question>
             );
