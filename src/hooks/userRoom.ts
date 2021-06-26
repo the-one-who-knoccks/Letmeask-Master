@@ -45,7 +45,7 @@ export function useRoom(roomId: string) {
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`);
 
-    // Once - ouve o evento uma única vez.
+    // Once - ouve o evento apenas uma única vez.
     // On - Sempre ouve o evento.
     // Val() - busca os dados que contem dentro do valor especificado.
     roomRef.on('value', room => {
