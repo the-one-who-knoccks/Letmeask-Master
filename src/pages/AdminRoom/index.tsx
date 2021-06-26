@@ -1,55 +1,44 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-useless-return */
 /* eslint-disable react/button-has-type */
 // import { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import logoImg from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
+import deleteImg from '../../assets/delete.svg';
 import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
-// import { useAuth } from '../../hooks/useAuth';
+
 import { useRoom } from '../../hooks/userRoom';
-// import { database } from '../../services/firebase';
 
 import './styles.scss';
+import { database } from '../../services/firebase';
 
 type RoomParamsProps = {
   id: string;
 };
 
 export function AdminRoom() {
-  // const { user } = useAuth();
   const params = useParams<RoomParamsProps>(); // Generic
-  // const [newQuestion, setNewQuestion] = useState('');
+  const history = useHistory();
   const roomId = params.id;
 
   const { title, questions } = useRoom(roomId);
 
-  // async function handleSendQuestion(event: FormEvent) {
-  //   event.preventDefault();
+  async function handleEndRoom() {
+    database.ref(`rooms/${roomId}`).update({
+      endedAt: new Date(),
+    });
 
-  //   if (newQuestion.trim() === '') {
-  //     return;
-  //   }
+    history.push('/');
+  }
 
-  //   if (!user) {
-  //     throw new Error('You must be logged in');
-  //   }
-
-  //   const question = {
-  //     content: newQuestion,
-  //     author: {
-  //       name: user.name,
-  //       avatar: user.avatar,
-  //     },
-  //     isHighlighted: false,
-  //     isAnswered: false,
-  //   };
-
-  //   await database.ref(`rooms/${roomId}/questions`).push(question);
-
-  //   setNewQuestion('');
-  // }
+  async function handleDeleteQuestion(questionId: string) {
+    if (window.confirm('Tem certeza que deseja excluir essa pergunta?')) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
+    }
+  }
 
   return (
     <div id="page-room">
@@ -58,7 +47,9 @@ export function AdminRoom() {
           <img src={logoImg} alt="letmeask" />
           <div>
             <RoomCode code={roomId} />
-            <Button isOutlined>Encerrar sala</Button>
+            <Button onClick={handleEndRoom} isOutlined>
+              Encerrar sala
+            </Button>
           </div>
         </div>
       </header>
@@ -76,7 +67,14 @@ export function AdminRoom() {
                 content={question.content}
                 key={question.id}
                 author={question.author}
-              />
+              >
+                <button
+                  type="button"
+                  onClick={() => handleDeleteQuestion(question.id)}
+                >
+                  <img src={deleteImg} alt="Remover pergunta?" />
+                </button>
+              </Question>
             );
           })}
         </div>
