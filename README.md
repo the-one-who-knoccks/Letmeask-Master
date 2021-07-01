@@ -20,7 +20,7 @@
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 
 </p>
-<br />
+<br /> 
 
 <h1 align="center">
     <img src="src/assets/logo.svg"  >
