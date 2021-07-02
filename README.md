@@ -7,7 +7,7 @@
    
   
 
-<p align="center">
+<p align="center"> 
 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=not-specified&color=7159C1&labelColor=000000">
   <img alt="Made by" src="https://img.shields.io/static/v1?label=made_by&message=Rocketseat&color=7159C1&labelColor=000000">
